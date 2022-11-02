@@ -2,12 +2,13 @@ import { features } from "process";
 import React, { useState } from "react";
 
 const heroCarousalImages: string[] = ["/head1.webp", "/head2.webp"];
-let count: number = 0; //faster when put here
+let count: number = 0; //faster when put here, outside scope
 export default function Slider() {
   // State for count
   const [currentIndex, setCurrentIndex] = useState(0);
   //let count: number = 0; //slower when put here
   const handlePreviousClick = () => {
+    //still has errors
     count = (count - 1) % heroCarousalImages.length;
     setCurrentIndex(count);
   };
@@ -24,7 +25,7 @@ export default function Slider() {
       />
       <div
         className="flex justify-between items-center absolute w-full top-1/2 
-      transform -translate-y-1/2 px-3"
+      transform -translate-y-1/2 px-3" //transorm translate trick to make it in th middle
       >
         <button onClick={handlePreviousClick}> Previous </button>
         <button onClick={handleNextClick}> Next </button>

@@ -28,6 +28,7 @@ export default function Home() {
     <div>
       {/* Contain All  */}
       {/* Contain All  *  <Nav />   */}
+
       <Slider />
     </div>
   );
